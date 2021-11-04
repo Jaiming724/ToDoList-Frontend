@@ -2,12 +2,13 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable, of, Subject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Task} from "../Task";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskServiceService {
-  private apiUrl: string = "http://localhost:5000/task"
+  private apiUrl: string = environment.apiUrl;
   private tasks: Task[] = [];
   private subject = new BehaviorSubject<Task[]>(this.tasks);
 
@@ -30,11 +31,12 @@ export class TaskServiceService {
   }
 
   private getTask(): Observable<Task[]> {
-    return this.http.get<Task[]>("http://localhost:5000/getTasks");
+    return this.http.get<Task[]>(environment.apiUrl + "getTasks");
   }
 
   public updateTask(task: Task): void {
-    this.http.post<Task>("http://localhost:5000/task", task).subscribe((newTask) => {
+
+    this.http.post<Task>(environment.apiUrl + "task", task).subscribe((newTask) => {
     })
   }
 
