@@ -9,7 +9,7 @@ import {Task} from "../../Task";
 })
 export class AddTaskComponent implements OnInit {
   completed: boolean = false;
-  date!: Date;
+  date?: Date;
   task!: string;
 
   constructor(private taskService: TaskServiceService) {
@@ -19,8 +19,13 @@ export class AddTaskComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.taskService.addTask(new Task(this.task, this.date.toString(), this.completed)).subscribe((task) => {
-      this.taskService.getTask().subscribe((currentTasks) => currentTasks.push(task));
-    });
+    if (this.task != null && this.date != null) {
+      this.taskService.addTask(new Task(this.task, this.date.toString(), this.completed));
+      this.date = undefined;
+      this.task = ""
+    } else {
+      alert("Date or Task is null")
+    }
   }
+
 }

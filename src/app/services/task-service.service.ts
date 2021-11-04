@@ -18,8 +18,11 @@ export class TaskServiceService {
     });
   }
 
-  public addTask(task: Task): Observable<Task> {
-    return this.http.post<Task>(this.apiUrl, task)
+  public addTask(task: Task): void {
+    this.http.post<Task>(this.apiUrl, task).subscribe((newTask) => {
+      this.tasks.push(newTask);
+      this.subject.next(this.tasks)
+    })
   }
 
   public getTaskList(): Observable<Task[]> {
@@ -30,8 +33,9 @@ export class TaskServiceService {
     return this.http.get<Task[]>("http://localhost:5000/getTasks");
   }
 
-  public updateTask(task: Task): Observable<Task> {
-    return this.http.post<Task>("http://localhost:5000/task", task)
+  public updateTask(task: Task): void {
+    this.http.post<Task>("http://localhost:5000/task", task).subscribe((newTask) => {
+    })
   }
 
 }

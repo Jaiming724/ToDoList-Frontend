@@ -19,13 +19,11 @@ export class TasksComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscription = this.taskService.getTaskList().subscribe((listOfTasks) => {
-      console.log(listOfTasks);
       this.tasks = listOfTasks;
     })
   }
 
   onChange($event: boolean, task: Task): void {
-    this.taskService.updateTask(task).subscribe((task) => {
-    });
+    this.taskService.updateTask(task);
   }
 }

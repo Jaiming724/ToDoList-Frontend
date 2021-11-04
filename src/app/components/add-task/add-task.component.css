@@ -1,6 +1,9 @@
 .form-module{
   background: hsl(235, 24%, 19%);
-  margin-bottom: 100px;
+  margin-bottom: 25px;
   display: flex;
   flex-direction: column;
+}
+mat-label{
+  color: white;
 }
