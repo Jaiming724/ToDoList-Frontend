@@ -1,0 +1,6 @@
+.form-module{
+  background: hsl(235, 24%, 19%);
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}

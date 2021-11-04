@@ -1,0 +1,10 @@
+<mat-selection-list>
+  <mat-list-option class="mat-primary" *ngFor="let task of tasks" [(selected)]="task.completed"
+                   (selectedChange)="onChange($event, task)">
+    <app-task-item [task]="task"></app-task-item>
+  </mat-list-option>
+
+  <mat-list-item>
+    <app-task-footer [tasks]="tasks"></app-task-footer>
+  </mat-list-item>
+</mat-selection-list>

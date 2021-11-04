@@ -1,0 +1,9 @@
+mat-selection-list {
+  background: hsl(235, 24%, 19%);
+  width: 100%;
+}
+
+
+mat-list-option{
+  margin: 10px 0;
+}
