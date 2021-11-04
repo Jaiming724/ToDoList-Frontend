@@ -19,6 +19,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatIconModule} from "@angular/material/icon";
+import {Route, RouterModule, Routes} from "@angular/router";
+
+const appRoutes: Routes = [{path: '', component: ContainerComponent}]
 
 @NgModule({
   declarations: [
@@ -30,20 +33,21 @@ import {MatIconModule} from "@angular/material/icon";
     TaskFooterComponent,
     AddTaskComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatListModule,
-        HttpClientModule,
-        MatCheckboxModule,
-        MatFormFieldModule,
-        MatDatepickerModule,
-        FormsModule,
-        MatButtonModule,
-        MatInputModule,
-        MatNativeDateModule,
-        MatIconModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatListModule,
+    HttpClientModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    FormsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatIconModule,
+    RouterModule.forRoot(appRoutes)
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
