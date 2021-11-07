@@ -20,7 +20,7 @@ export class TaskServiceService {
   }
 
   public addTask(task: Task): void {
-    this.http.post<Task>(this.apiUrl, task).subscribe((newTask) => {
+    this.http.post<Task>(this.apiUrl+"task", task).subscribe((newTask) => {
       this.tasks.push(newTask);
       this.subject.next(this.tasks)
     })
@@ -37,6 +37,7 @@ export class TaskServiceService {
   public updateTask(task: Task): void {
 
     this.http.post<Task>(environment.apiUrl + "task", task).subscribe((newTask) => {
+      this.subject.next(this.tasks)
     })
   }
 
