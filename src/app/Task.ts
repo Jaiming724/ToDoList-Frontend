@@ -1,13 +1,13 @@
 export class Task {
   id?: number;
   text: string;
-  day: string;
+  date: string;
   completed: boolean;
 
 
   constructor(text: string, day: string, shouldRemind: boolean) {
     this.text = text;
-    this.day = day;
+    this.date = day;
     this.completed = shouldRemind;
   }
 
