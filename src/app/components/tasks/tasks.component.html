@@ -1,8 +1,16 @@
 <mat-selection-list>
-  <mat-list-option class="mat-primary" *ngFor="let task of tasks" [(selected)]="task.completed"
-                   (selectedChange)="onChange($event, task)">
-    <app-task-item [task]="task"></app-task-item>
-  </mat-list-option>
+  <div *ngFor="let task of tasks">
+    <div style="display: flex; align-items: center">
+      <mat-list-option class="mat-primary" [(selected)]="task.completed" (selectedChange)="onChange($event, task)">
+
+        <app-task-item [task]="task"></app-task-item>
+      </mat-list-option>
+      <button mat-button>
+        <mat-icon color="warn" (click)="showTask(task)">edit</mat-icon>
+      </button>
+    </div>
+
+  </div>
 
   <mat-list-item>
     <app-task-footer></app-task-footer>

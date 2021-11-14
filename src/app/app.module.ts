@@ -20,6 +20,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatIconModule} from "@angular/material/icon";
 import {Route, RouterModule, Routes} from "@angular/router";
+import {TaskDialogComponent} from './components/task-dialog/task-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 const appRoutes: Routes = [{path: '', component: ContainerComponent}]
 
@@ -31,7 +33,8 @@ const appRoutes: Routes = [{path: '', component: ContainerComponent}]
     TasksComponent,
     TaskItemComponent,
     TaskFooterComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    TaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ const appRoutes: Routes = [{path: '', component: ContainerComponent}]
     MatInputModule,
     MatNativeDateModule,
     MatIconModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
