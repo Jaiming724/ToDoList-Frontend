@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "http://taskbackend-env.eba-njneiv4q.us-east-1.elasticbeanstalk.com/"
+  apiUrl: "https://task-backend-edf5q7plwa-ue.a.run.app/"
 };
